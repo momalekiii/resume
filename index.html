@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mohammad Reza Maleki · Software Engineer</title>
+    <!-- Font Awesome 6.7.2 (latest, supports X / Twitter icon) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
+    <style>
+        /* ––––– Reset & base ––––– */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background: #f6f6f6;
+            color: #1e1e1e;
+            line-height: 1.6;
+            padding: 40px 20px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .container {
+            max-width: 760px;
+            width: 100%;
+            background: #ffffff;
+            padding: 45px 50px 40px;
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+            border-radius: 4px;
+        }
+
+        /* ––––– Header ––––– */
+        .header {
+            margin-bottom: 30px;
+        }
+
+        .header h1 {
+            font-size: 38px;
+            font-weight: 600;
+            letter-spacing: -0.5px;
+            line-height: 1.15;
+            margin-bottom: 0;
+        }
+
+        .header .subtitle {
+            font-size: 19px;
+            font-weight: 400;
+            color: #555;
+            margin-top: 2px;
+        }
+
+        .header .location {
+            font-size: 15px;
+            color: #888;
+            margin-top: 2px;
+        }
+
+        .header .location i {
+            margin-right: 4px;
+            color: #999;
+            font-size: 13px;
+        }
+
+        /* ––– Social links: horizontally centered, icons + handles ––– */
+        .header .links {
+            margin-top: 10px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;    /* <-- centered the whole row */
+            gap: 1.4rem 1.8rem;
+            align-items: center;
+        }
+
+        .header .links a {
+            color: #1e1e1e;
+            text-decoration: none;
+            font-size: 14px;
+            display: inline-flex;
+            align-items: center;        /* <-- vertically centers icon + text */
+            gap: 6px;
+            transition: color 0.15s;
+        }
+
+        .header .links a i {
+            font-size: 16px;
+            color: #555;
+            width: 1.1rem;
+            text-align: center;
+            transition: color 0.15s;
+        }
+
+        .header .links a:hover {
+            color: #0066cc;
+        }
+        .header .links a:hover i {
+            color: #0066cc;
+        }
+
+        /* ––––– Sections ––––– */
+        .section {
+            margin-bottom: 28px;
+        }
+        .section:last-of-type {
+            margin-bottom: 0;
+        }
+
+        .section-title {
+            font-size: 14px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: #1e1e1e;
+            border-bottom: 1px solid #eaeaea;
+            padding-bottom: 5px;
+            margin-bottom: 15px;
+        }
+
+        /* ––––– About ––––– */
+        .about p {
+            font-size: 15px;
+            color: #333;
+            margin: 0;
+            line-height: 1.6;
+        }
+
+        /* ––––– Experience (Davide style: en‑dash bullets) ––––– */
+        .job {
+            margin-bottom: 20px;
+        }
+        .job:last-child {
+            margin-bottom: 0;
+        }
+
+        .job-header {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 1px;
+        }
+
+        .job-header .role {
+            font-weight: 600;
+            font-size: 16px;
+        }
+
+        .job-header .company {
+            font-weight: 400;
+            color: #1e1e1e;
+        }
+
+        .job-header .date {
+            font-size: 14px;
+            color: #999;
+            font-weight: 400;
+            white-space: nowrap;
+        }
+
+        .job ul {
+            list-style: none;
+            padding-left: 20px;
+            margin-top: 2px;
+        }
+
+        .job ul li {
+            position: relative;
+            padding-left: 12px;
+            font-size: 15px;
+            color: #333;
+            line-height: 1.5;
+            margin-bottom: 1px;
+        }
+
+        .job ul li::before {
+            content: "–";
+            position: absolute;
+            left: 0;
+            color: #888;
+        }
+
+        /* ––––– Education ––––– */
+        .edu-item {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: baseline;
+            font-size: 15px;
+        }
+
+        .edu-item .degree {
+            font-weight: 500;
+        }
+
+        .edu-item .univ {
+            font-weight: 400;
+            color: #1e1e1e;
+        }
+
+        .edu-item .year {
+            color: #999;
+            font-size: 14px;
+        }
+
+        /* ––––– Interests (middot separators) ––––– */
+        .interests p {
+            font-size: 15px;
+            color: #333;
+            margin: 0;
+        }
+
+        /* ––––– Mobile ––––– */
+        @media (max-width: 600px) {
+            body {
+                padding: 16px 10px;
+            }
+            .container {
+                padding: 24px 18px 20px;
+            }
+            .header h1 {
+                font-size: 30px;
+            }
+            .header .subtitle {
+                font-size: 17px;
+            }
+            .header .links {
+                gap: 0.8rem 1.2rem;
+            }
+            .header .links a {
+                font-size: 13px;
+            }
+            .job-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 0;
+            }
+            .job-header .date {
+                white-space: normal;
+                font-size: 13px;
+            }
+            .edu-item {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 0;
+            }
+            .edu-item .year {
+                font-size: 13px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+
+        <!-- ========== HEADER ========== -->
+        <header class="header">
+            <h1>Mohammad Reza Maleki</h1>
+            <div class="subtitle">Software Engineer</div>
+            <div class="location">
+                <i class="fas fa-map-pin"></i> Kurdistan, Iran
+            </div>
+
+            <!-- Social icons + handle (now centered and X icon works!) -->
+            <div class="links">
+                <a href="https://github.com/momalekiii" target="_blank" rel="noopener">
+                    <i class="fab fa-github"></i> momalekiii
+                </a>
+                <a href="https://linkedin.com/momalekiii" target="_blank" rel="noopener">
+                    <i class="fab fa-linkedin-in"></i> momalekiii
+                </a>
+                <a href="https://x.com/momalekiii" target="_blank" rel="noopener">
+                    <i class="fab fa-x-twitter"></i> momalekiii   <!-- Now shows the X logo -->
+                </a>
+                
+            </div>
+        </header>
+
+    
+        <!-- ========== EXPERIENCE ========== -->
+        <section class="section">
+            <h2 class="section-title">Experience</h2>
+
+            <!-- PR Manager -->
+            <div class="job">
+                <div class="job-header">
+                    <span class="role">
+                        PR Manager, <span class="company">Welfare Org</span>
+                    </span>
+                    <span class="date">2024 – 2026</span>
+                </div>
+                <ul>
+                    <li>Manage public relations, media outreach, and internal communications strategies.</li>
+                    <li>Coordinate events and stakeholder engagement to strengthen organisational presence.</li>
+                    <li>Align messaging across cross‑functional teams to support strategic goals.</li>
+                </ul>
+            </div>
+
+            <!-- IT Manager -->
+            <div class="job">
+                <div class="job-header">
+                    <span class="role">
+                        IT Manager, <span class="company">Welfare Org</span>
+                    </span>
+                    <span class="date">2023 – 2026</span>
+                </div>
+                <ul>
+                    <li>Oversee IT infrastructure, network security, and system administration organisation‑wide.</li>
+                    <li>Lead digital transformation projects and implement efficiency‑driven solutions.</li>
+                    <li>Provide technical support and strategic guidance on data management and tools.</li>
+                </ul>
+            </div>
+
+            <!-- Freelance Python Developer -->
+            <div class="job">
+                <div class="job-header">
+                    <span class="role">
+                        Freelance Python Developer, <span class="company">Self‑Employed</span>
+                    </span>
+                    <span class="date">2021 – 2024</span>
+                </div>
+                <ul>
+                    <li>Built automation scripts, web scrapers, and data‑processing pipelines for diverse clients.</li>
+                    <li>Developed RESTful APIs and microservices using FastAPI and Flask.</li>
+                    <li>Delivered maintainable, well‑documented solutions tailored to specific business needs.</li>
+                </ul>
+            </div>
+
+            <!-- Junior Android Developer -->
+            <div class="job">
+                <div class="job-header">
+                    <span class="role">
+                        Junior Android Developer (Java), <span class="company">Asre Ertebatat</span>
+                    </span>
+                    <span class="date">2018 – 2020</span>
+                </div>
+                <ul>
+                    <li>Developed and maintained Android applications using Java and MVVM architecture.</li>
+                    <li>Collaborated with design and backend teams to ship new features and fix issues.</li>
+                    <li>Participated in code reviews and contributed to performance and UX improvements.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- ========== EDUCATION ========== -->
+        <section class="section">
+            <h2 class="section-title">Education</h2>
+            <div class="edu-item">
+                <span class="degree">
+                    M.Sc. &amp; B.Sc. in Computer Science, <span class="univ">Islamic Azad University</span>
+                </span>
+                <span class="year">2018 – 2023</span>
+            </div>
+        </section>
+
+        <!-- ========== INTERESTS ========== -->
+        <section class="section interests">
+            <h2 class="section-title">Other Interests</h2>
+            <p>
+                Fitness &middot; Music &middot; Lifelong learning &middot; Making / Breaking
+            </p>
+        </section>
+
+    </div>
+</body>
+</html>
