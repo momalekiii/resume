@@ -70,7 +70,6 @@
     max-width: 680px;
   }
 
-  /* نوار ابزار بالای صفحه */
   .topbar {
     display: flex;
     align-items: center;
@@ -131,7 +130,6 @@
   }
   .icon-btn svg { width: 15px; height: 15px; fill: currentColor; }
 
-  /* هدر رزومه */
   header {
     padding-bottom: 28px;
     border-bottom: 1px solid var(--line);
@@ -198,7 +196,6 @@
     border-color: var(--fg);
   }
 
-  /* بخش‌های محتوایی */
   section {
     margin-bottom: 36px;
   }
@@ -221,7 +218,6 @@
     background: var(--line);
   }
 
-  /* تایم‌لاین سوابق */
   .timeline {
     position: relative;
     padding-left: 20px;
@@ -294,7 +290,6 @@
   }
   .entry-list li { margin-bottom: 4px; }
 
-  /* شبکه مهارت‌ها - تنظیم‌شده برای قرارگیری ۲ کارت کنار هم */
   .skills-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -343,7 +338,6 @@
     border-radius: 8px;
   }
 
-  /* پروژه‌های منتخب */
   .projects-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -382,7 +376,6 @@
     line-height: 1.45;
   }
 
-  /* فوتر */
   footer {
     margin-top: 48px;
     padding-top: 20px;
@@ -397,7 +390,6 @@
     color: var(--muted);
   }
 
-  /* استایل اختصاصی چاپ و خروجی PDF */
   @media print {
     body {
       background: #ffffff !important;
@@ -422,7 +414,6 @@
 <body>
 
   <div class="container">
-    <!-- نوار ابزار بالا -->
     <div class="topbar">
       <a href="/" class="back-link" id="backLink">← back</a>
 
@@ -437,13 +428,12 @@
       </div>
     </div>
 
-    <!-- هدر معرفی -->
     <header>
       <div class="header-top">
         <div class="glyph-badge">𓅓</div>
         <div>
           <h1>Mohammad Reza Maleki</h1>
-          <div class="role-tagline">Software Engineer · IT &amp; Public Relations</div>
+          <div class="role-tagline"> Software Engineer · IT </div>
         </div>
       </div>
 
@@ -452,7 +442,7 @@
       </p>
 
       <div class="meta-links">
-        <span>Iran, Kurdistan</span>
+        <span>Iran</span>
         <a href="https://github.com/momalekiii" target="_blank" rel="noopener">github.com/momalekiii</a>
         <a href="https://linkedin.com/in/momalekiii" target="_blank" rel="noopener">linkedin.com/in/momalekiii</a>
         <a href="https://x.com/momalekiii" target="_blank" rel="noopener">@momalekiii</a>
@@ -489,7 +479,6 @@
       </div>
     </section>
 
-    <!-- مهارت‌های فنی -->
     <section>
       <h2 class="section-title">Technical Skills</h2>
       <div class="skills-grid">
@@ -518,7 +507,6 @@
       </div>
     </section>
 
-    <!-- پروژه‌های متن‌باز -->
     <section>
       <h2 class="section-title">Open-Source Projects</h2>
       <div class="projects-grid">
@@ -556,7 +544,6 @@
       </div>
     </section>
 
-    <!-- تحصیلات -->
     <section>
       <h2 class="section-title">Education</h2>
       <div class="timeline">
@@ -577,7 +564,6 @@
   </div>
 
   <script>
-    // انیمیشن بازگشت نرم به صفحه اصلی
     const backLink = document.getElementById('backLink');
     backLink.addEventListener('click', (e) => {
       e.preventDefault();
@@ -585,7 +571,6 @@
       setTimeout(() => { window.location.href = backLink.href; }, 280);
     });
 
-    // همگام‌سازی تم با صفحه اصلی (sessionStorage + ساعت سیستم)
     const themeToggle = document.getElementById('themeToggle');
     const themeIcon = document.getElementById('themeIcon');
     const sunPath = '<path d="M12 18a6 6 0 1 1 0-12 6 6 0 0 1 0 12zm0-2a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM11 1h2v3h-2V1zm0 19h2v3h-2v-3zM3.515 4.929l1.414-1.414L7.05 5.636 5.636 7.05 3.515 4.93zM16.95 18.364l1.414-1.414 2.121 2.121-1.414 1.414-2.121-2.121zm2.121-14.85l1.414 1.415-2.121 2.121-1.414-1.414 2.121-2.121zM5.636 16.95l1.414 1.414-2.121 2.121-1.414-1.414 2.121-2.121zM23 11v2h-3v-2h3zM4 11v2H1v-2h3z"/>';
